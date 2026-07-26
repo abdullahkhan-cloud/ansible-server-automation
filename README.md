@@ -2,47 +2,49 @@
 
 ## Project Overview
 
-This project automates the configuration of a Linux server using Ansible.
+## Architecture
+
+```
+Local Machine (WSL Ubuntu)
+        │
+        │ SSH
+        ▼
+AWS EC2 Ubuntu Server
+        │
+        ▼
+ Ansible Playbook
+        │
+        ▼
+Install & Configure Nginx
+        │
+        ▼
+Custom Web Page
+```
+
+---
+
+This project automates the configuration of an Ubuntu Linux server on AWS EC2 using Ansible.
 
 The playbook performs the following tasks:
 
 - Installs Nginx
 - Starts the Nginx service
-- Enables Nginx on boot
-- Deploys a custom index.html page
+- Enables Nginx to start automatically on boot
+- Deploys a custom index.html web page
+
+The project demonstrates Infrastructure Automation and Configuration Management using Ansible.
+
+---
 
 ## Tools Used
 
-- Ansible
-- Ubuntu Linux
 - AWS EC2
+- Ubuntu Linux
+- Ansible
 - SSH
 - Git
 - GitHub
-
-## Project Structure
-
-```
-ansible-server-automation/
-├── ansible.cfg
-├── inventory.ini
-├── playbook.yml
-├── README.md
-└── files/
-    └── index.html
-```
-
-## Run the Playbook
-
-```bash
-ansible-playbook playbook.yml
-```
-
-## Skills Demonstrated
-
-- Configuration Management
-- Infrastructure Automation
-- Linux Administration
+- Nginx
 - YAML
-- SSH
-- Ansible
+
+---
